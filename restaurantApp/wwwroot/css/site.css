@@ -1,0 +1,33 @@
+/* home */
+
+.homeContent {
+    background: red;
+    padding: 120px 0;
+    color: #fff;
+}
+
+.homeContent .content {
+    width:40%;
+    margin-left: 140px;
+
+}
+
+.homeContent h1 {
+    font-size: 70px;
+    margin-bottom: 60px;
+}
+
+.homeContent2 {
+    background:green;
+    padding:32px;
+    color: #fff;
+}
+
+.homeContent2 .main-text {
+    font-size: 22px;
+}
+
+.homeContent2 .text {
+    font-size: 17px;
+}
+
