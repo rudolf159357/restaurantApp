@@ -5,7 +5,10 @@
 /* home */
 
 .homeContent {
-    background: red;
+    background-image: url("../images/burger.jpg");
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
     padding: 120px 0;
     color: #fff;
 }
@@ -22,9 +25,14 @@
 }
 
 .homeContent2 {
-    background:green;
     padding:32px;
     color: #fff;
+}
+
+.homeContent2 .content {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
 }
 
 .homeContent2 .main-text {
@@ -37,7 +45,10 @@
 
 
 .homeContent3 {
-    background:cornflowerblue ;
+    background-image: url("../images/cake.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* MENU */
