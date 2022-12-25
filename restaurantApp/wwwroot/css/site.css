@@ -7,7 +7,7 @@
 }
 
 .homeContent .content {
-    width:40%;
+    width:30%;
     margin-left: 140px;
 
 }
@@ -31,3 +31,79 @@
     font-size: 17px;
 }
 
+
+.homeContent3 {
+    background:cornflowerblue ;
+}
+
+/* MENU */
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+.menuBox {
+    border: 1px solid black;
+    width: 350px;
+    height: 160px;
+    padding: 60px 0;
+    border-radius: 10px;
+}
+
+.menuBox p {
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.menu .soup {
+    margin-top: 30px;
+}
+
+.menu .meal {
+    margin-left: 680px;
+}
+
+.menu .dessert {
+    margin-left: 130px;
+}
+
+/* CONTACT */
+
+.contactContent {
+    background: red;
+    padding: 80px 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+
+.contactContent .content {
+    width: 30%;
+    margin-left: 140px;
+}
+
+.contactContent .content h1{
+    margin-bottom: 30px;
+}
+
+.contactContent .content p {
+    font-size: 20px;
+}
+
+.contactContent .img {
+    width: 400px;
+    height: 300px;
+    background: #000;
+    margin-left: 300px;
+}
+
+.contactBox {
+    margin: 40px auto 100px auto;
+}
+
+.contactBox ul li{
+    padding-left: 0;
+}
