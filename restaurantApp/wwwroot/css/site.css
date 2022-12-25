@@ -1,3 +1,7 @@
+/* all*/
+
+
+
 /* home */
 
 .homeContent {
@@ -98,6 +102,7 @@
     height: 300px;
     background: #000;
     margin-left: 300px;
+    border-radius: 10px;
 }
 
 .contactBox {
@@ -106,4 +111,56 @@
 
 .contactBox ul li{
     padding-left: 0;
+}
+
+/* food soup */
+
+.food-section {
+    margin-top: 50px;
+}
+
+.food-section a {
+    text-decoration: none;
+    color: #000;
+}
+
+.food-section .foodBox {
+     border: 1px solid black;
+     padding: 50px  0;
+     margin-bottom: 50px;
+     border-radius: 10px;
+}
+
+.food-section .foodBox p {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* location */
+
+.location {
+    margin-top: 50px;
+    margin-bottom: 120px;
+}
+
+
+.location h1 {
+     text-align: center; 
+     margin-bottom: 50px;
+}
+
+.location dl {
+    margin-bottom: 50px;
+}
+
+.location dl dt {
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.location dl dd {
+    display: block;
+    margin-left: 40px;
 }
