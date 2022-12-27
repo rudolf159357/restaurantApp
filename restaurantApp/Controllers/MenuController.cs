@@ -23,5 +23,14 @@ namespace restaurantApp.Controllers
         public IActionResult Desserts() {
             return View();
         }
+
+        public IActionResult Product() {
+            return View();
+        }
+
+        [Route("[controller]/product/success")]
+        public IActionResult Thank() {
+            return View();
+        }
     }
 }
