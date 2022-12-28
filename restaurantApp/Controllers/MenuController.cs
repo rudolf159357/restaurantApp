@@ -1,9 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using restaurantApp.Data;
 
 namespace restaurantApp.Controllers
 {
     public class MenuController : Controller
     {
+
+        public AppDbContext Context { get; set; }
+
+        public MenuController(AppDbContext context)
+        {
+            Context = context;
+        }
+
         // menu view
         public IActionResult Index()
         {
@@ -11,8 +21,34 @@ namespace restaurantApp.Controllers
         }
 
         // soup view
-        public IActionResult Soup() {
-            return View();
+        [Route("[controller]/soup")]
+        public async Task<IActionResult> Soup() {
+            return View(await Context.Soups.ToListAsync());
+        }
+
+        [Route("[controller]/soup/product")]
+        public IActionResult SoupProduct(int? id)
+        {
+            if (id == null) {
+                return NotFound();
+            }
+
+            var value = Context.Soups.Find(id);
+
+            return View(value);
+        }
+
+        [Route("[controller]/soup/product/success")]
+        public IActionResult SoupThank(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var value = Context.Soups.Find(id);
+
+            return View(value);
         }
 
         // main  meal view
@@ -25,11 +61,6 @@ namespace restaurantApp.Controllers
         }
 
         public IActionResult Product() {
-            return View();
-        }
-
-        [Route("[controller]/product/success")]
-        public IActionResult Thank() {
             return View();
         }
     }

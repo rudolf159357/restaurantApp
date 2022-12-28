@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using restaurantApp.Data;
+
 namespace restaurantApp
 {
     public class Program
@@ -8,6 +11,11 @@ namespace restaurantApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(option =>
+            {
+                option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             var app = builder.Build();
 

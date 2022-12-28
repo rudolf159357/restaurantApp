@@ -5,10 +5,10 @@ namespace restaurantApp.Data
 {
     public class AppDbContext: DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> dbContext)
+        public AppDbContext(DbContextOptions<AppDbContext> dbContext): base(dbContext)
         {
         }
-
+        // seeding data to database
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Soup>().HasData(
                new Soup { Id = 1, Type = "Tomato Soup", Price=5.99 },
