@@ -27,41 +27,92 @@ namespace restaurantApp.Controllers
         }
 
         [Route("[controller]/soup/product")]
-        public IActionResult SoupProduct(int? id)
+        public async Task<IActionResult> SoupProduct(int? id)
         {
             if (id == null) {
                 return NotFound();
             }
 
-            var value = Context.Soups.Find(id);
+            var value = await Context.Soups.FindAsync(id);
 
             return View(value);
         }
 
         [Route("[controller]/soup/product/success")]
-        public IActionResult SoupThank(int? id)
+        public async Task<IActionResult> SoupThank(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var value = Context.Soups.Find(id);
+            var value = await Context.Soups.FindAsync(id);
 
             return View(value);
         }
 
         // main  meal view
-        public IActionResult Meal() {
-            return View();
-        }
-        // desserts view
-        public IActionResult Desserts() {
-            return View();
+        [Route("[controller]/meal")]
+        public async Task<IActionResult> Meal() {
+            return View(await Context.Meals.ToListAsync());
         }
 
-        public IActionResult Product() {
-            return View();
+        [Route("[controller]/meal/product")]
+        public async Task<IActionResult> MealProduct(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var value = await Context.Meals.FindAsync(id);
+
+            return View(value);
+        }
+
+        [Route("[controller]/meal/product/success")]
+        public async Task<IActionResult> MealThank(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var value = await Context.Meals.FindAsync(id);
+
+            return View(value);
+        }
+
+        // desserts view
+        [Route("[controller]/desserts")]
+        public async Task<IActionResult> Desserts() {
+            return View(await Context.Desserts.ToListAsync());
+        }
+
+        [Route("[controller]/desserts/product")]
+        public async Task<IActionResult> DessertProduct(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var value = await Context.Desserts.FindAsync(id);
+
+            return View(value);
+        }
+
+        [Route("[controller]/desserts/product/success")]
+        public async Task<IActionResult> DessertThank(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var value = await Context.Desserts.FindAsync(id);
+
+            return View(value);
         }
     }
 }

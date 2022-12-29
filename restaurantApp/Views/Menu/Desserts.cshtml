@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Desserts>
+
 @{
     ViewData["Title"] = "Desserts";
 }
@@ -6,27 +7,14 @@
 
 <div class="container food-section">
      <div class="row">
-        <div class="col-md-4">
-          <div class="foodBox" style="background: url(../images/cake2.jpg); background-size: cover;background-position: center;">
-                 <p><a asp-controller="Menu" asp-action="Product">food1</a></p>
-            </div>
-        </div>
-        <div class="col-md-4">
-          <div class="foodBox" style="background: url(../images/cake2.jpg); background-size: cover;background-position: center;">
-                 <p><a asp-controller="Menu" asp-action="Product">food1</a></p>
-            </div>
-        </div>
-        <div class="col-md-4">
-          <div class="foodBox" style="background: url(../images/cake2.jpg); background-size: cover;background-position: center;">
-                 <p><a asp-controller="Menu" asp-action="Product">food1</a></p>
-            </div>
-        </div>
-
-         <div class="col-md-4">
-          <div class="foodBox" style="background: url(../images/cake2.jpg); background-size: cover;background-position: center;">
-                 <p><a href="#">food1</a></p>
-            </div>
-        </div>
+         @foreach (var item in Model)
+         {
+                 <div class="col-md-4">
+                  <div class="foodBox" style="background: url(../images/cake2.jpg); background-size: cover;background-position: center;">
+                          <p><a asp-controller="Menu" asp-action="DessertProduct" asp-route-id=@item.Id>@item.Type</a></p>
+                    </div>
+                 </div>
+         }
   </div>
 </div>
 
