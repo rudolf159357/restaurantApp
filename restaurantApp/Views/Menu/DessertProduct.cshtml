@@ -8,7 +8,11 @@
     <div class="box">
     <h1>@Model.Type</h1>
     <p>Price: <small>@Model.Price</small>$</p>
-    <button class="btn btn-dark btn-lg"> <a asp-controller="Menu" asp-action="DessertThank" asp-route-id=@Model.Id>Buy</a></button>
+    <div class="d-flex align-items-center justify-content-center">
+        <button class="btn btn-dark btn-lg"> <a asp-controller="Menu" asp-action="DessertThank" asp-route-id=@Model.Id>Buy</a></button>
+        <button class="btn btn-dark btn-lg"> <a asp-controller="Menu" asp-action="Desserts">Back</a></button>
+    </div>
+    
     </div>
 </div>
 
